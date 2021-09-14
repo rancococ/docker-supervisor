@@ -70,7 +70,7 @@ pidfile=/var/run/supervisor/supervisord.pid\n\
 nodaemon=true\n\
 minfds=1024\n\
 minprocs=200\n\
-user=${USER}\n\
+user=root\n\
 [include]\n\
 files = /etc/supervisord.d/*.conf"\
 	> /etc/supervisord.conf && \
