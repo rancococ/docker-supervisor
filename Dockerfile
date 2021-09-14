@@ -55,6 +55,8 @@ RUN \rm -rf /etc/yum.repos.d/*.repo && \
 	echo -e "\
 [unix_http_server]\n\
 file=/var/run/supervisor/supervisor.sock\n\
+username=${USER}\n\
+password=123456\n\
 [inet_http_server]\n\
 port=0.0.0.0:9001\n\
 username=${USER}\n\
