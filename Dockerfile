@@ -54,7 +54,7 @@ RUN \rm -rf /etc/yum.repos.d/*.repo && \
     mv /etc/supervisord.conf /etc/supervisord.conf.back && \
     echo -e "\
 [unix_http_server]\n\
-file=/var/run/supervisor/supervisor.sock\n\
+file=/var/run/supervisor.sock\n\
 username=${USER}\n\
 password=123456\n\
 [inet_http_server]\n\
@@ -66,7 +66,7 @@ logfile=/var/log/supervisor/supervisord.log\n\
 logfile_maxbytes=100MB\n\
 logfile_backups=10\n\
 loglevel=info\n\
-pidfile=/var/run/supervisor/supervisord.pid\n\
+pidfile=/var/run/supervisord.pid\n\
 nodaemon=true\n\
 minfds=1024\n\
 minprocs=200\n\
