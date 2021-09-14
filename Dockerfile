@@ -51,8 +51,8 @@ RUN \rm -rf /etc/yum.repos.d/*.repo && \
     \cp /home/.bashrc ${APP_HOME} && \
     chown -R ${UID}:${GID} ${APP_HOME}/.bashrc && \
     wget -c -O /usr/local/bin/gosu --no-cookies --no-check-certificate "${GOSU_URL}" && chmod +x /usr/local/bin/gosu && \
-	mv /etc/supervisord.conf /etc/supervisord.conf.back && \
-	echo -e "\
+    mv /etc/supervisord.conf /etc/supervisord.conf.back && \
+    echo -e "\
 [unix_http_server]\n\
 file=/var/run/supervisor/supervisor.sock\n\
 username=${USER}\n\
@@ -73,12 +73,8 @@ minprocs=200\n\
 user=root\n\
 [include]\n\
 files = /etc/supervisord.d/*.conf"\
-	> /etc/supervisord.conf && \
+    > /etc/supervisord.conf && \
     chown -R ${USER}:${GROUP} /data && \
-	chown -R ${USER}:${GROUP} /etc/supervisord.conf && \
-	chown -R ${USER}:${GROUP} /etc/supervisord.d && \
-	chown -R ${USER}:${GROUP} /var/run/supervisor && \
-	chown -R ${USER}:${GROUP} /var/log/supervisor && \
     chown -R ${USER}:${GROUP} /docker-entrypoint.sh && \
     chmod +x /docker-entrypoint.sh
 
