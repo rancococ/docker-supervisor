@@ -68,10 +68,15 @@ pidfile=/var/run/supervisord.pid\n\
 nodaemon=true\n\
 minfds=1024\n\
 minprocs=200\n\
+user=${USER}\n\
 [include]\n\
 files = /etc/supervisord.d/*.conf"\
 	> /etc/supervisord.conf && \
     chown -R ${USER}:${GROUP} /data && \
+	chown -R ${USER}:${GROUP} /etc/supervisord.conf && \
+	chown -R ${USER}:${GROUP} /etc/supervisord.d && \
+	chown -R ${USER}:${GROUP} /var/run/supervisor && \
+	chown -R ${USER}:${GROUP} /var/log/supervisor && \
     chown -R ${USER}:${GROUP} /docker-entrypoint.sh && \
     chmod +x /docker-entrypoint.sh
 
