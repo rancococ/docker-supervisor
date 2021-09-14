@@ -89,7 +89,7 @@ ENV TERM xterm
 ENV PATH .:${PATH}
 
 # set user
-USER ${USER}
+USER root
 
 # set work home
 WORKDIR /data
