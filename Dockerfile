@@ -86,6 +86,9 @@ ENV TZ "Asia/Shanghai"
 ENV TERM xterm
 ENV PATH .:${PATH}
 
+# set user
+USER ${USER}
+
 # set work home
 WORKDIR /data
 
